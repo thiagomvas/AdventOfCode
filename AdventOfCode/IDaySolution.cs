@@ -8,4 +8,5 @@ namespace AdventOfCode;
 internal interface IDaySolution
 {
     string Solve(string input);
+    string SolvePartTwo(string input);
 }
