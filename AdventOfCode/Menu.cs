@@ -9,12 +9,23 @@ internal class Menu
 {
     private readonly string _title;
     private readonly List<MenuOption> _options;
+    private Menu? parent;
     private int _selectedOption;
 
     public Menu(string title, List<MenuOption> options)
     {
         _title = title;
         _options = options;
+        if(_options != null)
+        {
+            foreach (var o in _options)
+            {
+                if(o.Submenu is not null)
+                {
+                    o.Submenu.parent = this;
+                }
+            }
+        }
     }
 
     public void Display()
@@ -50,6 +61,9 @@ internal class Menu
                     break;
                 case ConsoleKey.Enter:
                     _options[_selectedOption].Execute();
+                    break;
+                case ConsoleKey.Escape:
+                    parent?.Display();
                     break;
             }
         }

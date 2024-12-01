@@ -10,6 +10,7 @@ internal class MenuOption
     public string Description { get; }
     private readonly Action _action;
     private readonly Menu _submenu;
+    public Menu Submenu => _submenu;
 
     public MenuOption(string description, Action action = null, Menu submenu = null)
     {
