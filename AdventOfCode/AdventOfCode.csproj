@@ -16,4 +16,8 @@
 		</Content>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Problems\2024\Day 3\" />
+	</ItemGroup>
+
 </Project>
