@@ -72,7 +72,8 @@ internal static class Menus
             .Where(t =>
                 t.Namespace?.StartsWith($"AdventOfCode.Solutions._{year}") ?? false && 
                 typeof(IDaySolution).IsAssignableFrom(t) && 
-                !t.IsAbstract) 
+                !t.IsAbstract)
+            .Where(t => t.Name.StartsWith("Day", StringComparison.InvariantCultureIgnoreCase))
             .Select(t => new MenuOption(
                 t.Name, 
                 () =>

@@ -18,6 +18,7 @@
 
 	<ItemGroup>
 	  <Folder Include="Problems\2024\Day 3\" />
+	  <Folder Include="Problems\2024\Day 4\" />
 	</ItemGroup>
 
 </Project>
